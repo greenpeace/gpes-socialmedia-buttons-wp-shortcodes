@@ -1,0 +1,41 @@
+/* Simple socialmedia buttons */
+
+.social-links {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.social-links p {
+    text-align: center;
+}
+
+.social-links a, #single .social-links a {
+  border: none;
+  border-radius: 5px;
+  padding: 8px 14px;
+  font-size: 15px;
+  color: #fff;
+  text-decoration: none;
+  line-height: 3.1em;
+}
+
+.social-links a:hover, .social-links a:active {
+    color: #eee;
+}
+
+a.fb-link {
+  background-color: #306199;
+}
+
+a.tw-link {
+  background-color: #38CDF7;
+}
+
+a.wa-link {
+  background-color: #007870;
+}
