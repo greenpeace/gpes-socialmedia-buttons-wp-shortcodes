@@ -1,14 +1,16 @@
 # Social media buttons
 
-This shortcode creates 3 buttons to share a URL in social media
+This shortcode creates 3 buttons to share a URL in social networks:
 
 * Facebook
 * Twitter
 * Whatsapp
 
-It's a multilingual shortcode. See bellow on how to translate it.
+**Features:**
 
-It creates links with [utm paramaters](https://en.wikipedia.org/wiki/UTM_parameters) that can be tracked with Google Analytics and other software. 
+* It's a multilingual shortcode. See bellow on how to translate it.
+* It creates links with [utm paramaters](https://en.wikipedia.org/wiki/UTM_parameters) that can be tracked with Google Analytics and other software. 
+* It triggers a [Google Analytics event](https://support.google.com/analytics/answer/1033068) when the user clicks in a button.
 
 ## How to use
 
