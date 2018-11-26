@@ -1,7 +1,7 @@
 <?php
 /**
  * @package simple_socialmedia_buttons
- * @version 0.2
+ * @version 0.3
  */
 /*
 Plugin Name: Simple socialmedia buttons
@@ -10,7 +10,7 @@ Description: Add a social media buttons shortcode <code>[simple_socialmedia_butt
 Author: Osvaldo Gago
 Text Domain: simple-socialmedia-buttons
 Domain Path: /languages
-Version: 0.2
+Version: 0.3
 Author URI: https://osvaldo.pt
 */
 
@@ -55,13 +55,13 @@ add_action( 'init', 'simple_socialmedia_buttons_plugin_detection' );
 function shortcode_simple_socialmedia_buttons($atts = [], $content = null, $tag = '') {
 
     // Assets loading
-
-    wp_enqueue_script('shortcode_simple_socialmedia_buttons', plugin_dir_url(__FILE__) . 'js/shortcode-simple-socialmedia-buttons.js', array(), '0.2');
-
-    wp_enqueue_style('shortcode_timber', plugin_dir_url(__FILE__) . 'css/shortcode-simple-socialmedia-buttons.css', array(), '0.2' );
-
+    
+    wp_enqueue_script('shortcode_simple_socialmedia_buttons', plugin_dir_url(__FILE__) . 'js/shortcode-simple-socialmedia-buttons.js', array(), '0.3');
+    
+    wp_enqueue_style('shortcode_timber', plugin_dir_url(__FILE__) . 'css/shortcode-simple-socialmedia-buttons.css', array(), '0.3' );
+        
     // Shortcode attributes and content loading
-
+    
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
 
     $attributes = shortcode_atts([
@@ -70,23 +70,23 @@ function shortcode_simple_socialmedia_buttons($atts = [], $content = null, $tag 
         'msg' => __(' Please add a Whatsapp message to the shortcode ', 'simple-socialmedia-buttons'),
         'event_category' => __('Default', 'simple-socialmedia-buttons')
     ], $atts, $tag);
-
+    
     $attributes['content'] = $content;
-
+    
     // Render output
-
+    
     if ( class_exists('Timber') ) {
-
+        
         // Output with timber
-
+        
         $output = Timber::compile( 'views/simple-socialmedia-buttons.twig', $attributes );
-
+        
         return $output;
-
+        
     } else {
 
         // Fallback output without timber
-
+        
         $output = '';
         $output = '<div class="social-links">';
         $output .= '<p>' .  __('Share in social media:', 'simple-socialmedia-buttons') .'</p>';
@@ -98,9 +98,9 @@ function shortcode_simple_socialmedia_buttons($atts = [], $content = null, $tag 
         $output .= '</div>';
 
         return $output;
-
+        
     }
-
+    
 }
 
 add_shortcode('simple_socialmedia_buttons', 'shortcode_simple_socialmedia_buttons');
