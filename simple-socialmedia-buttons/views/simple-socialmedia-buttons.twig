@@ -1,7 +1,7 @@
 <div class="social-links">
     <p>{{ __('Share in social media:', 'simple-socialmedia-buttons') }}</p>
     <p>
-        <a class="fb-link" data-url="{{ url | e('esc_url') }}{% if event_category %}?utm_campaign={{ event_category | e('html_attr') }}&utm_source=facebook&utm_medium=social_network_link{% endif %}" data-clickeventcategory="{{ event_category | e('html_attr') }}" data-clickeventlabel="Facebook">Facebook</a> &nbsp;
+        <a class="fb-link" data-url="{{ url | e('esc_url') }}{% if event_category %}?utm_campaign={{ event_category | e('html_attr') }}&utm_source=facebook&utm_medium=social_network_link{% endif %}" data-clickeventcategory="{{ event_category | e('html_attr') }}" data-clickeventlabel="Facebook">Facebook</a> &nbsp; 
         <a class="tw-link" data-tweet="{{ tweet | e('html_attr') }} {{ url | e('esc_url') }}{% if event_category %}?utm_campaign={{ event_category | e('html_attr') }}&utm_source=twitter&utm_medium=social_network_link{% endif %}" data-clickeventcategory="{{ event_category | e('html_attr') }}" data-clickeventlabel="Twitter">Twitter</a> &nbsp;
         <a class="wa-link" data-msg="{{ msg | e('html_attr') }} {{ url | e('esc_url') }}{% if event_category %}?utm_campaign={{ event_category | e('html_attr') }}&utm_source=whatsapp&utm_medium=social_network_link{% endif %}" data-clickeventcategory="{{ event_category | e('html_attr') }}" data-clickeventlabel="Whatsapp">Whatsapp</a>
     </p>
