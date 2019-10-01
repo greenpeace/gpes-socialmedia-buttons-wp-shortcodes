@@ -3,14 +3,15 @@ console.log("Shortcode Timber plugin javascript loaded");
 document.addEventListener("DOMContentLoaded", function(){
     
     var analyticsEvent = function(category, action, label) {
-      if (typeof(ga) == "function") {
-        ga('send', 'event', category, action, label);
-      } else if (typeof(gtag) == "function") {
+        
+    if (typeof(gtag) == "function") {
         gtag('event', action, {
-          'event_category': category,
-          'event_label': label
+            'event_category': category,
+            'event_label': label
         });
-      } else {
+    } else if (typeof(ga) == "function") {
+        ga('send', 'event', category, action, label);
+    } else {
         console.error("Analytics event not tracked: " + category + ", " + action + ", " + label);
       }
     };
